@@ -1,0 +1,5 @@
+com.moviefinder
+com.moviefinder.bean
+com.moviefinder.controller
+com.moviefinder.repository
+com.moviefinder.service
