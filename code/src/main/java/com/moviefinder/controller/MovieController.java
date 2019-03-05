@@ -33,7 +33,6 @@ public class MovieController extends BaseApiController {
 
     @RequestMapping("/search")
     private List<Movie> movies(@RequestParam(name = "title") String title) {
-        List<Movie> movies = movieService.findByTitleContaining(title);
-        return movies;
+        return movieService.findByTitleContaining(title);
     }
 }

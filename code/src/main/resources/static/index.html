@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>mainpage</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<h1>This is the index page</h1>
+<body bgcolor="#7fffd4">
+<!--/*it a Navbar*\-->
+<div class="topnav" id="myTopnav">
+    <a><h1 id="title_name" >Movie Show Time </h1></a>
+    <a><input id="searchMovie" type="text" placeholder="Search by Movie..." name="search">
+        <button id="searchBM" type="submit"><i class="fa fa-search"></i></button></a>
+    <a href="index.html" class="active">Home</a>
+    <a href="report.html">Report</a>
+    <a href="about.html">About</a>
+</div>
 
+<div class="resultpage" >
+    <div id="result"></div>
+</div>
+<script src="js/app.js"></script>
 </body>
 </html>

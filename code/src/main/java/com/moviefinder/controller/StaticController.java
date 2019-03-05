@@ -10,4 +10,10 @@ public class StaticController {
     public String index(){
         return "index.html";
     }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "about.html";
+    }
+
 }
