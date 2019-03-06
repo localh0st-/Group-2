@@ -2,14 +2,13 @@ package com.moviefinder.bean;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name = "Movies")
 @Table(name = "movies")
+@SecondaryTable(name = "metadata")
 @Data
-public class    Movie {
+public class Movie {
 
     @Id
     private long id;
@@ -17,15 +16,11 @@ public class    Movie {
     private String genre;
     private int year;
     private String rating;
+    @Column(name = "trailer",table = "metadata",nullable = false)
+    private String trailerUrl;
+    @Column(name = "image", table = "metadata", nullable = false)
+    private String imageUrl;
 
-    public Movie(){
-    }
-
-    public Movie(long id, String title, String genre, int year, String rating) {
-        this.id = id;
-        this.title = title;
-        this.genre = genre;
-        this.year = year;
-        this.rating = rating;
+    public Movie() {
     }
 }

@@ -18,11 +18,12 @@ public class MovieService{
         this.repository = repository;
     }
 
+
     public List<Movie> findByTitleContaining(String title) {
         return repository.findByTitleContaining(title);
     }
 
-    public List<Movie> findall() {
+    public List<Movie> findAll() {
         return (List<Movie>) repository.findAll();
     }
 

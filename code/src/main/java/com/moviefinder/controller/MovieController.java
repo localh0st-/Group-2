@@ -21,14 +21,14 @@ public class MovieController extends BaseApiController {
         this.movieService = movieService;
     }
 
-    @RequestMapping("/movie/{id}")
-    public Optional<Movie> movie(@PathVariable("id") long id) {
+    @RequestMapping("/searchById")
+    public Optional<Movie> movie(@RequestParam(name = "id") long id) {
         return movieService.findById(id);
     }
 
     @RequestMapping("/movies")
     private List<Movie> movies(){
-        return movieService.findall();
+        return movieService.findAll();
     }
 
     @RequestMapping("/search")

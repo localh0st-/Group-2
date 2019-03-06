@@ -31,7 +31,7 @@ function searchMovie(){
                 $('#result').empty();
                 console.log('search returned', data);
                 $.each(data, function (index, val) {
-                    $('#result').append('<br><h1>' + 'title: ' + val.title + ', year: ' + val.year + '</h1>');
+                    $('#result').append('<br><a href="/movie?id=' + val.id + '"><h1>' + ' ' + val.title + ', year: ' + val.year + '</h1>' + '</a>');
                 });
             }
         });
