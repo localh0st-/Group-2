@@ -7,10 +7,15 @@ body h1{
     color: white;
     background-color: white;
 }
-.resultpage{
+.result{
     margin-top: 50px;
     margin-left: 15px;
     color: darkviolet;
+    border-color: black;
+}
+.result:hover{
+    color: pink;
+    background-color: yellow;
 }
 .topnav {
     overflow: hidden;
