@@ -11,6 +11,14 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends CrudRepository<Movie, Long> {
 
-    @Query("select m from Movies m where m.title like %:title%")
-    List<Movie> findByTitleContaining(@Param("title")String title);
+    //    @Query("select m from Movies m where m.title like %:title%")
+    List<Movie> findByTitleContaining(@Param("title") String title);
+
+    @Query("select m from Movies m where m.id = :id")
+    List<Movie> findShowtimesByMovieId(@Param("id") long id);
+
+//    @Query("select t.name from theaters t where t.id = :id")
+//    String findByTheaterId(@Param("id") long id);
+
+    List<Movie> findMovieById(long id);
 }
