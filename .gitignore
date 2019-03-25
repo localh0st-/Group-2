@@ -1,0 +1,5 @@
+code/.gradle/
+code/out/
+code/build/
+code/.idea/
+*.class
