@@ -20,7 +20,7 @@ public class MovieController extends BaseApiController {
         this.movieService = movieService;
     }
 
-    @RequestMapping("/searchById")
+    @RequestMapping(value = "/search", params = "id")
     public Optional<Movie> movie(@RequestParam(name = "id") long id) {
         return movieService.findById(id);
     }
@@ -30,7 +30,7 @@ public class MovieController extends BaseApiController {
         return movieService.findAll();
     }
 
-    @RequestMapping("/search")
+    @RequestMapping(value = "/search", params = "title")
     private List<Movie> movies(@RequestParam(name = "title") String title) {
         return movieService.findByTitleContaining(title);
     }
