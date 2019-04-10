@@ -2,26 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title class="title">Movie Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>mainpage</title>
     <script src="jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="js/movieApp.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/mTrailer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/searchApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
 </head>
-<body bgcolor="#7fffd4">
+<body bgcolor="#b22222">
 <div class="topnav" id="myTopnav">
     <a><h1 id="title_name" >Movie Show Time </h1></a>
-    <a><input id="searchMovie" type="text" placeholder="Search by Movie..." name="search">
-        <button id="searchBM" type="submit"><i class="fa fa-search"></i></button></a>
+    <a  class="searchNav">
+        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
+        <i class="sb fa-search"></i>
+    </a>
     <a href="index.html" class="active">Home</a>
     <a href="report.html">Report</a>
     <a href="about.html">About</a>
+    <a href="admin.html">Login Page</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div class="login-container">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Username" name="username">
+            <input type="text" placeholder="Password" name="psw">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </div>
 
 <div class="resultpage" >
     <div id="result"></div>
 </div>
-<script src="js/searchApp.js"></script>
+
+
+<!--    <script>-->
+<!--        $(function(){-->
+<!--            $("#carouselDisplay").load("carousel.html");-->
+<!--        });-->
+<!--    </script>-->
+
+
+<!--    <body>-->
+<!--    <div id="carouselDisplay"></div>-->
+<!--    </body>-->
+
+
+
+
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+<!--//////////////////////////////////////////Footer page////////////////////////////////////////-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/movieListDisplay.css">
+
+
+    <script>
+        var cardw=145;	//page card's width .
+        var cardh=145;
+        var cardp=1;
+        var cardn=4;	//the number of visible page card .
+        var margin=9;	//margin between cards .
+        var slidewraph=cardh+85;
+        var covered=cardw-33;	//coverd part of card (at both tails of box).
+        var boxw=cardw*cardn+margin*(cardn-1)-covered*2; //box width 845
+        var singlemove=(cardw+margin)*(cardn-2);	//transform distance .
+        var listn=0;
+        var boundary=0;
+        $(document).ready(function(){	//be triggered when all elements are ready .
+
+            $('.box').width(boxw);
+            $('.slide-wrap').height(slidewraph);
+            $('ul').css({left:-covered});
+
+            $.getJSON("JSON/data.js",function (result){
+                listn = result['Movie'].length;
+                boundary = (cardw+margin)*(listn)-singlemove;
+                $.each(result['Movie'], function (i,field){
+                    $('ul>li:first').after('<li><img src='+field.imgpath+'><div class=\'title\'>'+field.title+'<br><span>'+field.des+'</span></div></li>');
+                });
+                $('li').css("margin-right",margin);
+                $('li').width(cardw);
+                $('li').height(cardh);
+                $('img').width(cardw);
+                $('li').marginTop(cardp);
+                $('img').height(cardh);
+                $('.title').width(cardw);
+            });
+            $('.slide-wrap').hover(function() {
+                $('.shift').addClass('shift-active');
+                $('i').addClass('i-active');
+            }, function() {
+                $('.shift').removeClass('shift-active');
+                $('i').removeClass('i-active');
+            });
+            $('.right').hover(function() {
+                $('.slide').addClass('slide-active-r');
+            }, function() {
+                $('.slide').removeClass('slide-active-r');
+            });
+            $('.left').hover(function() {
+                $('.slide').addClass('slide-active-l');
+            }, function() {
+                $('.slide').removeClass('slide-active-l');
+            });
+            $('.shift').hover(function() {
+                $('i').addClass('i-active-move');
+            }, function() {
+                $('i').removeClass('i-active-move');
+            });
+            var movement=0;
+            $('.right').click(function(event) {
+                if(Math.abs(movement) < boundary)
+                    movement-=singlemove;
+                $('ul').hover().css('transform','translateX('+movement+'px)');
+            });
+            $('.left').click(function(event) {
+                if(movement < 0)
+                    movement+=singlemove;
+                $('ul').hover().css('transform','translateX('+movement+'px)');
+            });
+        });
+    </script>
+    <title>jquery_carousel_slider</title>
+</head>
+
+<body>
+<div class ='box'>
+    <h3>Coming Soon</h3>
+    <div class='tri'></div>
+    <div class ='slide-wrap'>
+        <div class='border'>
+            <div class='slide'>
+                <div class='shift right'></div>
+                <i class='shift right'></i>
+                <div class='shift left'></div>
+                <i class ='shift left'></i>
+                <ul>
+                    <li>
+                    </li>
+                    <li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="footerCSS">
+    <footer class="footerpage">
+        <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
+        </div>
+    </footer>
+</section>
 </body>
 </html>
- 
+

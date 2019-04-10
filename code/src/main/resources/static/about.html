@@ -2,20 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title class="title">Movie Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>mainpage</title>
-    <script src="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="js/movieApp.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/mTrailer.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
 </head>
-<body bgcolor="#7fffd4">
+<body bgcolor="#b22222">
 <div class="topnav" id="myTopnav">
-    <a><h1 id="title_name">Movie Show Time </h1></a>
-    <a><input id="searchMovie" type="text" placeholder="Search by Movie..." name="search">
-        <button id="searchBM" type="submit"><i class="fa fa-search"></i></button></a>
-    <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/index.html" class="active">Home</a>
-    <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/report.html">Report</a>
-    <a href="about.html">About</a>
+    <a><h1 id="title_name" >Movie Show Time </h1></a>
+    <a  class="searchNav">
+        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
+        <i class="sb fa-search"></i>
+    </a>
+    <a href="index.html">Home</a>
+    <a href="report.html">Report</a>
+    <a href="about.html"  class="active" >About</a>
+    <a href="admin.html">Login Page</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div class="login-container">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Username" name="username">
+            <input type="text" placeholder="Password" name="psw">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </div>
 
 <div class="resultpage">
