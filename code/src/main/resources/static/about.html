@@ -1,64 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>mainpage</title>
     <script src="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/style.css">
+    <link href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/style.css" rel="stylesheet">
+    <style>
+        div.ck {
+            display: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 290px;
+            margin-left: 10px;
+        }
+        a.ckp:hover + div {
+            display: block;
+        }
+        div.da {
+            display: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 290px;
+            margin-left: 10px;
+        }
+        a.dap:hover + div {
+            display: block;
+        }
+        div.js {
+            display: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 290px;
+            margin-left: 10px;
+        }
+        a.jsp:hover + div {
+            display: block;
+        }
+        div.jsa {
+            display: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 290px;
+            margin-left: 10px;
+        }
+        a.jsap:hover + div {
+            display: block;
+        }
+        div.ar {
+            display: none;
+            border: 1px solid #000;
+            height: 30px;
+            width: 290px;
+            margin-left: 10px;
+        }
+        a.arp:hover + div {
+            display: block;
+        }
+        .container {
+            position: relative;
+            width: 50%;
+        }
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+    </style>
 </head>
 <body bgcolor="#7fffd4">
-<div class="topnav" id="myTopnav">
-    <a><h1 id="title_name">Movie Show Time </h1></a>
-    <a><input id="searchMovie" type="text" placeholder="Search by Movie..." name="search">
-        <button id="searchBM" type="submit"><i class="fa fa-search"></i></button></a>
-    <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/index.html" class="active">Home</a>
-    <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/report.html">Report</a>
-    <a href="about.html">About</a>
-</div>
-
+<div class="topnav" id="myTopnav"> <a>
+    <h1 id="title_name">Movie Show Time </h1>
+</a> <a>
+    <input name="search" type="text" id="searchMovie" placeholder="Search by Movie...">
+    <button type="submit" id="searchBM"><i class="fa fa-search"></i></button>
+</a> <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/index.html" class="active">Home</a> <a href="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/report.html">Report</a> <a href="about.html">About</a> </div>
 <div class="resultpage">
     <div id="result"></div>
 </div>
 <script src="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/js/searchApp.js"></script>
-<h1>About US page</h1>
-This is for the about page
-<table class="abouttable">
-    <tbody><tr>
-        <th> Charlie K.</th>
-        <th> Charlie started his career in highschool when he began working for Verdeeco, a smart-grid data anayltics startup company. As the company grew and eventually acquired Sensus, Charlie remained as a software developer. Further on, his role transitioned from software development to development operations when Xylem acquired Sensus. Since then, Charlie has remained on the team as a coordinator between the devops and development teams.
+<h1> Who we are</h1>
+Schwifty,other known as Group 2, is a group partaking in a software engineering course of Spring 2019. Our goal is to produce a movie show-time finder using a web browser that ables users to search for a movie whilst having the option to purchase tickets at select venues.
+<table>
+    <thead>
+    <tr>
+        <th class="container"> <a class="ckp"> Charlie K. <img src="Image-1 (3).png" style="width:200px;height:200px" class="image"> </a>
+            <div class="middle">
+                <div class="text"> Charlie started his career in highschool when he began working for Verdeeco, a smart-grid data anayltics startup company. As the company grew and eventually acquired Sensus, Charlie remained as a software developer, but eventually transitioned to development operations when Xylem acquired Sensus. Since then, Charlie has remained on the team as a coordinator between the devops and development teams. </div>
+            </div>
         </th>
-
-    </tr>
-
-
-    <tr>
-        <th> Dawit A.</th>
-        <th>
-            As an IT and customer service representative at the CATLab of Georgia State University, Dawit spends his time maintaining and overlooking the handling of technical equipment reserved in the CATLab. Due to his time at the university, his communicating, team building, and social skills have strengthed. </th>
-    </tr>
-
-
-
-    <tr>
-        <th> Juwan S.</th>
-        <th>
-            As a student at Georgia State University, Juwan is a junior computer science major. Being skilled in Java and knowing relevant knowledge in front-end development, releveant courses that he has taken to strengthen is skills include Data Structures and Systems Programming.</th>
-    </tr>
-    <tr>
-        <th> Jiawei S. </th>
-        <th>
-            Jiawei is a recently graduate student of Georgia State University whom majored in Computer Science. As a current research assistant, focusing on modeling and stimulation, Jiwaei is knowledgeable in Java, C and some front-end languages. Relevant coursework he has studied includes Automata, Modeling and Stimulation Theory and Application, and Programming Language Concepts.
+        <th> <a class="dap"> Dawit A. <img src="Image-1 (2).png" style="width:250px;height:200px"> </a>
+            <div class="da"> As an IT and customer service representative at the CATLab of Georgia State University, Dawit spends his time maintaining and overlooking the handling of technical equipment reserved in the CATLab. Due to his time at the university, his communicating, team building, and social skills have strengthed. </div>
+        </th>
+        <th> <a class="jsp"> Juwan S. <img src="Image-1 (4).png" style="width:200px;height:200px"> </a>
+            <div class="js"> As a student at Georgia State University, Juwan is a junior computer science major. Being skilled in Java and knowing relevant knowledge in front-end development, releveant courses that he has taken to strengthen is skills include Data Structures and Systems Programming. </div>
         </th>
     </tr>
-    <tr>
+    </thead>
+    <tbody>
+    <tr><td><a class="jsap"> Jiawei S. <img src="Image-1 (1).png" style="width:200px;height:200px"> </a>
+        <div class="jsa"> Jiawei is a recently graduate student of Georgia State University whom majored in Computer Science. As a current research assistant, focusing on modeling and stimulation, Jiwaei is knowledgeable in Java, C and some front-end languages. Relevant coursework he has studied includes Automata, Modeling and Stimulation Theory and Application, and Programming Language Concepts. </div></td>
+        <td><a class="arp"> Ashanti R. <img src="Image-1 (5).png" style="width:250px;height:200px"> </a>
+            <div class="ar"> Ashanti is a current senior at Georgia State University pursuing a bachelors' degree in computer science. As a designer, Ashanti is experienced in front-end development as well as having knowledge in programming in Java. Studying to become an UI/UX designer, relevant coursework that she has taken includes Data Mining and Digital Image Processing. </div></td>
+    </tr></tbody>
+</table>
 
-        <th> Ashanti R </th>
-        <th>
-            Ashanti is a current senior at Georgia State University pursuing a bachelors' degree in computer science. As a designer, Ashanti is experienced in front-end development as well as having knowledge in programming in Java. Studying to become an UI/UX designer, relevant coursework that she has taken includes Data Mining and Digital Image Processing.
-        </th></tr>
-    </tbody></table>
-</body>
 
-</html>
+</body></html>
