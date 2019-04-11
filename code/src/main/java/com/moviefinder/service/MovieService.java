@@ -46,4 +46,9 @@ public class MovieService {
         }
         return tl;
     }
+
+    public List<Showtime> findShowtimesByMovieId(int id) {
+        return repository.findMovieById(id).get(0).getShowtimes();
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.moviefinder.controller;
 
 import com.moviefinder.bean.Movie;
+import com.moviefinder.bean.Showtime;
 import com.moviefinder.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,7 @@ public class MovieController extends BaseApiController {
     }
 
     @RequestMapping("/movies")
-    private List<Movie> movies(){
+    private List<Movie> movies() {
         return movieService.findAll();
     }
 
@@ -38,5 +39,10 @@ public class MovieController extends BaseApiController {
     @RequestMapping("/theater")
     private Map<String, HashSet<Time>> theaters(@RequestParam(name = "movieid") long id) {
         return movieService.findTheatersByMovieId(id);
+    }
+
+    @RequestMapping("/showtimes")
+    private List<Showtime> showtimes(@RequestParam(name = "id") int id) {
+        return movieService.findShowtimesByMovieId(id);
     }
 }

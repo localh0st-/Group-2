@@ -12,6 +12,7 @@ public class Theater {
     @Id
     private int id;
     private String name;
+    private float price;
 
     @JsonBackReference
     @OneToOne(mappedBy = "theater")
