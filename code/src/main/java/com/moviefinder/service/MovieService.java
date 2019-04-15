@@ -25,7 +25,7 @@ public class MovieService {
     }
 
     public List<Movie> findAll() {
-        return (List<Movie>) repository.findAll();
+        return repository.findAll();
     }
 
     public Optional<Movie> findById(long id) {
@@ -33,7 +33,7 @@ public class MovieService {
     }
 
     public Map<String, HashSet<Time>> findTheatersByMovieId(long id) {
-        Movie m = repository.findMovieById(id).get(0);
+        Movie m = repository.findById(id).orElse(new Movie());
         HashSet values;
         Map<String, HashSet<Time>> tl = new HashMap<>();
         for (Showtime s : m.getShowtimes()) {
