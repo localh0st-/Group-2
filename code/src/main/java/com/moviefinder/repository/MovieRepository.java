@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
 
-    List<Movie> findByTitleContaining(@Param("title") String title);
+    List<Movie> findByTitleContainingIgnoreCase(@Param("title") String title);
 
     List<Movie> findMovieById(long id);
 }

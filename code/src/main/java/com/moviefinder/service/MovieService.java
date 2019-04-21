@@ -21,7 +21,7 @@ public class MovieService {
 
 
     public List<Movie> findByTitleContaining(String title) {
-        return repository.findByTitleContaining(title);
+        return repository.findByTitleContainingIgnoreCase(title);
     }
 
     public List<Movie> findAll() {
