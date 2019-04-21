@@ -163,9 +163,12 @@ body h1{
 }
 
 .MovieTicket{
-    position: absolute;
-
-    
+    position:relative;
+    transition: .5s ease;
+    top: 191px;
+    left: 420px;
+    right: -4020px;
+    bottom: -191px;
     
 }
 .footerpage{
