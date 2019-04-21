@@ -1,27 +1,19 @@
 $(document).ready(function () {
-    var id = window.location.href.split("?").pop().split("=").pop();
-    var movietitle = "test";
+    var id= window.location.href.split("?").pop().split("=").pop();
+    console.log(id);
     $.ajax({
-        url: 'http://localhost:8080/api/search?id=' + id,
+        url: 'http://localhost:8080/api/theater?movieid=' + id,
         method: 'GET',
         dataType: 'json',
         success: function (data) {
-            movietitle = data.title;
-            $("#movieId").text(movietitle + " showtimes:");
-        }
-    });
-    console.log(movietitle);
-
-    $.ajax({
-        url: 'http://localhost:8080/api/showtimes?id=' + id,
-        method: 'GET',
-        dataType: 'json',
-        success: function (data) {
+            $('#resultCheckout').empty();
             console.log('CheckOut returned', data);
-            $.each(data, function (index,val) {
-                $("#movieTime").append('<option value=' + val.start_time + '>' + val.start_time + '</option>');
-                $("#theater").text(val.theater.name);
-                $("#moviePrice").text('$' + val.);
+            $(".name").text(data.id);
+           $(".startTime").text(data.startTime);
+            $(".price").text(data.price);
+            $(".theater").text(data.name);
+            $.each(data, function (name) {
+                $('#resultCheckout').find('.movieSelect').append('<br><select><option href="/movie?id=' +id + '"><h1>' + ' theater:' + name + '</h1>' + '</option></select>');
             });
 
 

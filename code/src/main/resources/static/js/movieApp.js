@@ -10,8 +10,10 @@ $(document).ready(function () {
             console.log('search returned', data);
             $(".title").text(data.title);
             $(".year").text(data.year);
-            $(".image").text(data.image);
+            $(".image").text(data.imageURL);
             $(".rating").text(data.rating);
+            $(".genre").text(data.genre);
+
             $(".showtimes").text(data.showtimes);
             $("#trailerIframe").attr("src",data.trailerUrl);
             $(".MovieTicket").append('<a type="button" href="/checkout?id=' + id + '" class="btn btn-primary  align-bottom">Get Ticket</a>');

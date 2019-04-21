@@ -66,7 +66,7 @@
         }
     }
 </script>
-<!--//////////////////////////////////////////Footer page////////////////////////////////////////-->
+<!--//////////////////////////////////////////slider movie image////////////////////////////////////////-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,8 +76,8 @@
 
 
     <script>
-        var cardw = 145;	//page card's width .
-        var cardh = 218;
+        var cardw = 245;	//page card's width .
+        var cardh = 418;
         var cardn = 4;	//the number of visible page card .
         var margin = 9;	//margin between cards .
         var slidewraph = cardh + 85;
@@ -85,7 +85,7 @@
         var boxw = cardw * cardn + margin * (cardn - 1) - covered * 2; //box width 845
         var singlemove = (cardw + margin) * (cardn - 2);	//transform distance .
         var listn = 0;
-        var boundary = 0;
+        var boundary = 4;
         $(document).ready(function () {	//be triggered when all elements are ready .
 
             $('.box').width(boxw);
@@ -110,65 +110,20 @@
                     $('.title').width(cardw);
                 }
             });
-            $('.slide-wrap').hover(function () {
-                $('.shift').addClass('shift-active');
-                $('i').addClass('i-active');
-            }, function () {
-                $('.shift').removeClass('shift-active');
-                $('i').removeClass('i-active');
-            });
-            $('.right').hover(function () {
-                $('.slide').addClass('slide-active-r');
-            }, function () {
-                $('.slide').removeClass('slide-active-r');
-            });
-            $('.left').hover(function () {
-                $('.slide').addClass('slide-active-l');
-            }, function () {
-                $('.slide').removeClass('slide-active-l');
-            });
-            $('.shift').hover(function () {
-                $('i').addClass('i-active-move');
-            }, function () {
-                $('i').removeClass('i-active-move');
-            });
-            var movement = 0;
-            $('.right').click(function (event) {
-                if (Math.abs(movement) < boundary)
-                    movement -= singlemove;
-                $('ul').hover().css('transform', 'translateX(' + movement + 'px)');
-            });
-            $('.left').click(function (event) {
-                if (movement < 0)
-                    movement += singlemove;
-                $('ul').hover().css('transform', 'translateX(' + movement + 'px)');
-            });
         });
     </script>
     <title>jquery_carousel_slider</title>
 </head>
 
 <body>
-<div class='box'>
-    <h3>Coming Soon</h3>
-    <div class='tri'></div>
-    <div class='slide-wrap'>
-        <div class='border'>
-            <div class='slide'>
-                <div class='shift right'></div>
-                <i class='shift right'></i>
-                <div class='shift left'></div>
-                <i class='shift left'></i>
-                <ul>
-                    <li>
-                    </li>
-                    <li>
-                    </li>
-                </ul>
-            </div>
+        <div class='tri'>
+            <ul>
+                <li> </li>
+                <li> </li>
+            </ul>
         </div>
-    </div>
-</div>
+
+
 <section id="footerCSS">
     <footer class="footerpage">
         <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
