@@ -20,7 +20,8 @@ function searchMovie(){
     var search = $('#searchMovie').val();
     if ($.trim(search) === "") {
         console.log('Search is empty');
-        $('#result').html('<h1>enter a movie name</h1>');
+        // $('#result').html('<h1>enter a movie name</h1>');
+        $('#searchresults').empty();
     } else {
         console.log('User searched', search);
         $.ajax({
@@ -28,11 +29,14 @@ function searchMovie(){
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                $('#result').empty();
+                $('#searchresults').empty();
                 console.log('search returned', data);
+                let i=0;
                 $.each(data, function (index, val) {
-                    $('#result').append('<br><a href="/movie?id=' + val.id + '"><h1>' + ' ' + val.title + ',year:' + val.year + ',Rating:' + val.rating + '</h1>' + '</a>');
-
+                    if(i<10) {
+                        i++;
+                        $('#searchresults').append('<option "/movie?id=' + val.id + '">' + val.title + '</option>');
+                    }
                 });
             }
         });
