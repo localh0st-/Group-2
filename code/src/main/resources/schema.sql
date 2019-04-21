@@ -1,4 +1,6 @@
-create table if not exists movies
+drop table IF exists movies, metadata, theaters, showtimes;
+
+create table movies
 (
     id bigint not null
         constraint movies_pkey
@@ -11,7 +13,7 @@ create table if not exists movies
 
 alter table movies owner to springboot;
 
-create table if not exists metadata
+create table metadata
 (
     image varchar(255) not null,
     trailer varchar(255) not null,
@@ -24,7 +26,7 @@ create table if not exists metadata
 
 alter table metadata owner to springboot;
 
-create table if not exists theaters
+create table theaters
 (
     id integer not null
         constraint theaters_pkey
@@ -35,7 +37,7 @@ create table if not exists theaters
 
 alter table theaters owner to springboot;
 
-create table if not exists showtimes
+create table showtimes
 (
     id integer not null
         constraint showtimes_pkey
