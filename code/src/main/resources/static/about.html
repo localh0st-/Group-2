@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="js/movieApp.js"></script>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/mTrailer.css">
+    <link rel="stylesheet" href="css/movieCheckOut.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/searchApp.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #grad1 {
+            height: 200px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, pink , yellow); /* Standard syntax (must be last) */
+        }
+         .flip-card-back {
+             height: 200px;
+             background-color: red; /* For browsers that do not support gradients */
+             background-image: linear-gradient(to right,black ,paleturquoise); /* Standard syntax (must be last) */
+         }
+
         table {
-            border-spacing:1em .5em;
+            border-spacing:1em .0em;
             padding: 0 2em 1em 0;
             table-layout: fixed;
             width:100%;
+
         }
         td.a {
             text-align: center;
@@ -38,17 +52,62 @@
         }
         div.head{
             width: 875px;
+            font: 24px;
             padding-bottom: 15px;
         }
         h1.top{
             padding-top: 30px;
+            font: 24px;
             padding-bottom: 15px;
+        }
+        .flip-card {
+            background-color: inherit;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            border-spacing: 9px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+
+
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: red;
+            z-index: 2;
+        }
+
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+            z-index: 1;
         }
     </style>
 </head>
-<body>
+<body id="grad1">
 <div class="topnav" id="myTopnav">
-    <a><h1 id="title_name">Movie Show Time </h1></a>
+    <a><h1 id="title_name"  style="color: #4CAF50">Movie Show Time </h1></a>
     <a class="searchNav">
         <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
         <i class="sb fa-search"></i>
@@ -60,36 +119,64 @@
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
-    <div class="login-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Username" name="username">
-            <input type="text" placeholder="Password" name="psw">
-            <button type="submit">Login</button>
-        </form>
+</div>
+
+<div align="center">
+    <h1 class="top"> Who we are</h1>
+    <div class="head" >Schwifty,other known as Group 2, is a group partaking in a software engineering course of Spring 2019. Our goal is to produce a movie show-time finder using a web browser that ables users to search for a movie whilst having the option to purchase tickets at select venues.
     </div>
 </div>
-<script src="../../../../../../Group-2-master%20(2)/Group-2-master/code/src/main/resources/static/js/searchApp.js"></script>
-<div align="center">
-<h1 class="top"> Who we are
-</h1>
-<div class="head" >Schwifty,other known as Group 2, is a group partaking in a software engineering course of Spring 2019. Our goal is to produce a movie show-time finder using a web browser that ables users to search for a movie whilst having the option to purchase tickets at select venues.
-</div>
-</div>
-    <table>
+<table>
     <tr>
-        <td class="a"> Charlie K.
-            <img src="img/Image-1%20(6).png" style="width:200px;height:200px" class="image">
-            <div class="text">Charlie started his career when he began working for Verdeeco, a smart-grid data analytics startup company. As the company expanded, Charlie transitioned from a software developer to development operations. He currently is a coordinator between the devops and development teams.
+        <td class="a">
+            <div  class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/Image-1%20(6).png" alt="Avatar" style="width:300px;height:300px;background-color: lightblue">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Charlie K.</h1>
+                        <p>Charlie started his career when he began working for Verdeeco, a smart-grid
+                            data analytics startup company. As the company expanded, Charlie transitioned
+                            from a software developer to development operations. He currently is a coordinator
+                            between the devops and development teams.</p>
+
+                    </div>
+                </div>
             </div>
         </td>
-        <td class="a"> Dawit A.
-            <img src="img/Image-1%20(2).png" style="width:250px;height:200px">
-            <div class="text">As an IT and customer service representative at the CATLab of Georgia State University, Dawit spends his time maintaining and overlooking the handling of technical equipment reserved in the CATLab. Due to his time at the university, his communicating, team building, and social skills have strengthened.
+        <td class="a">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/Image-1%20(2).png" alt="Avatar" style="width:300px;height:300px; background-color: lightsalmon">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Dawit A.</h1>
+                        <p>As an IT and customer service representative at the CATLab of Georgia State University,
+                            Dawit spends his time maintaining and overlooking the handling of technical equipment
+                            reserved in the CATLab. Due to his time at the university, his communicating, team building,
+                            and social skills have strengthened.</p>
+
+                    </div>
+                </div>
             </div>
         </td>
-        <td class="a"> Juwan S.
-            <img src="img/Image-1%20(8).png" style="width:240px;height:200px">
-            <div class="text">As a student at Georgia State University, Juwan is a junior computer science major. Being skilled in Java and knowing relevant knowledge in front-end development, relevant courses that he has taken to strengthen is skills include Data Structures and Systems Programming.
+        <td class="a">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/Image-1%20(8).png" alt="Avatar" style="width:300px;height:300px;background-color: lightseagreen">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Juwan S.</h1>
+                        <p>As a student at Georgia State University, Juwan is a junior computer science major. Being
+                            skilled in Java and knowing relevant knowledge in front-end development, relevant courses
+                            that he has taken to strengthen is skills include Data Structures and Systems Programming.
+                        </p>
+
+                    </div>
+                </div>
             </div>
         </td>
     </tr>
@@ -97,19 +184,50 @@
 </table>
 <table>
     <div class="flex">
-        <td class="b"> Jiawei S.
-            <img src="img/Image-1%20(7).png" style="width:240px;height:200px">
-            <div class="text">Jiawei is a graduate student of Georgia State University whom majored in Computer Science. Currently a research assistant, focusing on modeling and simulation, he is knowledgeable in Java, C and some front-end languages. Relevant coursework he has studied includes Automata, and Modeling and Stimulation Theory and Application.
+        <td class="b">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/Image-1%20(7).png" alt="Avatar" style="width:300px;height:300px;background-color: olivedrab">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Jiawei S.</h1>
+                        <p>Jiawei is a graduate student of Georgia State University whom majored in Computer Science.
+                            Currently a research assistant, focusing on modeling and simulation, he is knowledgeable
+                            in Java, C and some front-end languages. Relevant coursework he has studied includes Automata,
+                            and Modeling and Stimulation Theory and Application.</p>
+
+                    </div>
+                </div>
             </div>
         </td>
 
-        <td class="b"> Ashanti R.
-            <img src="img/Image-1%20(5).png" style="width:250px;height:200px">
-            <div class= "text">Ashanti is a senior computer science major at Georgia State. As a designer, she is experienced in front-end development and design as well as having some experience with Java. Studying to become an UI/UX designer, relevant coursework that she has taken includes Data Mining and Digital Image Processing.
+        <td class="b">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/Image-1%20(5).png" alt="Avatar" style="width:300px;height:300px;background-color: #7838ff">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Ashanti R.</h1>
+                        <p>Ashanti is a senior computer science major at Georgia State. As a designer, she is experienced
+                            in front-end development and design as well as having some experience with Java. Studying to
+                            become an UI/UX designer, relevant coursework that she has taken includes Data Mining and
+                            Digital Image Processing..</p>
+
+                    </div>
+                </div>
             </div>
         </td>
     </div>
     </tr>
 </table>
+
+<section id="footerCSS">
+    <footer class="footerpage">
+        <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
+        </div>
+    </footer>
+</section>
 </body>
 </html>

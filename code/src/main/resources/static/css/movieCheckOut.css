@@ -126,40 +126,34 @@ body h1{
 }
 
 .movieTrailerpage {
-    position: relative;
     top: 10px;
     width: 1420px;
     height: 500px;
     border: 3px solid;
-    background-color: black;
+    /*background-color:(to right ,orange,red ,black);*/
 }
-.movieimage {
-    position: absolute;
-    top: 0px;
-    right: 100;
+.movieinfo {
     width: 350px;
     height: 490px;
     border: 3px solid black;
-
 }
 .movieName {
-    position: inherit;
-    top: 0px;
-    left: 45vh;
-    right: 0vw;
-    width: 410px;
+    width: 400px;
     height: 30px;
     border: 3px solid ;
     font-size: 16px;
     color: black;
 }
 .movieTrail {
-    position: absolute;
     top: 0px;
     right: 0;
     width: 640px;
     height: 320px;
     border: 3px solid black;
+}
+
+.MovieTicket{
+    float:right;
 }
 .footerpage{
     position: absolute;
