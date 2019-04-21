@@ -22,4 +22,9 @@ public class StaticController {
     public String movieInfo() {
         return "movieInfo.html";
     }
+
+    @RequestMapping("/checkout")
+    public String movieCheckout() {
+        return "movieCheckout.html";
+    }
 }
