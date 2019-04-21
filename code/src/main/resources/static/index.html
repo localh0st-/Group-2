@@ -16,18 +16,20 @@
         body {
             height: 200px;
             background-color: red; /* For browsers that do not support gradients */
-            background-image: linear-gradient(to right,black,deeppink); /* Standard syntax (must be last) */
+            background-image: linear-gradient(to right, black, deeppink); /* Standard syntax (must be last) */
         }
     </style>
 
 </head>
-<body >
+<body>
 <div class="topnav" id="myTopnav">
     <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
     <div class="searchNav">
-        <input id="searchMovie" type="search" placeholder="Search by Movie..." name="search" list="searchresults">
-        <datalist id="searchresults"></datalist>
-        <button type="submit"><i class="fa  fa-search"></i></button>
+        <form id="searchboxform" action="/movie">
+            <input id="searchMovie" type="text" placeholder="Search by Movie..." name="id" list="searchresults">
+            <datalist id="searchresults"></datalist>
+            <input type="submit" id="searchBM"><i class="fa  fa-search"></i></input>
+        </form>
     </div>
     <a href="index.html" class="active">Home</a>
     <a href="report.html">Report</a>

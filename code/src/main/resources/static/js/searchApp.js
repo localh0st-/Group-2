@@ -12,7 +12,12 @@ $(document).ready(function () {
     });
 
     $('#searchBM').click(function(){
-        searchMovie();
+        var data = {};
+        $('#searchresults option').each(function(i,el) {
+            data[$(el).data("value")] = $(el).val();
+        });
+        var value = $('#searchMovie').val();
+        $('#searchMovie').val($('#searchresults [value="' + value + '"]').data('value'))
     })
 });
 
@@ -35,7 +40,7 @@ function searchMovie(){
                 $.each(data, function (index, val) {
                     if(i<10) {
                         i++;
-                        $('#searchresults').append('<option "/movie?id=' + val.id + '">' + val.title + '</option>');
+                        $('#searchresults').append('<option data-value="' + val.id + '"value=' + val.title + '>');
                     }
                 });
             }
