@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Time;
 
 @Entity
 @Table(name = "showtimes")
@@ -14,7 +15,7 @@ public class Showtime {
     private int id;
     private int theater_id;
     private int movie_id;
-    private String start_time;
+    private Time start_time;
 
     @JsonManagedReference
     @OneToOne
