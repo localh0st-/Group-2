@@ -7,10 +7,19 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             movietitle = data.title;
-            $("#movieId").text(movietitle + " showtimes:");
+            $("#movietitle").text(movietitle + " showtimes:");
         }
     });
     console.log(movietitle);
+
+    $('#movieTime').change(function(){
+        var data = {};
+        $('#movieTime option').each(function(i,el) {
+            data[$(el).data("value")] = $(el).val();
+        });
+        var value = $('#movieTime').val();
+        $('#movieprice').text('$' + $('#movieTime [value="' + value + '"]').data('value'));
+    })
 
     $.ajax({
         url: 'http://localhost:8080/api/showtimes?id=' + id,
@@ -19,14 +28,15 @@ $(document).ready(function () {
         success: function (data) {
             console.log('CheckOut returned', data);
             $.each(data, function (index,val) {
-                $("#movieTime").append('<option value=' + val.start_time + '>' + val.start_time + '</option>');
+                $("#movieTime").append('<option value=' + val.start_time + ' data-value=' + val.theater.price +'>' + val.start_time + '</option>');
                 $("#theater").text(val.theater.name);
-                $("#moviePrice").text('$' + val.);
             });
 
 
         }
     });
+
+
 });
 
 
