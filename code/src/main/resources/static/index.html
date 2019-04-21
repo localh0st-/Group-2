@@ -24,10 +24,10 @@
 <body >
 <div class="topnav" id="myTopnav">
     <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
-    <a class="searchNav">
-        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
-        <i class="sb fa-search"></i>
-    </a>
+    <div class="searchNav">
+        <input id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
     <a href="index.html" class="active">Home</a>
     <a href="report.html">Report</a>
     <a href="about.html">About</a>
@@ -74,7 +74,7 @@
 
     <script>
         var cardw = 145;	//page card's width .
-        var cardh = 145;
+        var cardh = 218;
         var cardn = 4;	//the number of visible page card .
         var margin = 9;	//margin between cards .
         var slidewraph = cardh + 85;
