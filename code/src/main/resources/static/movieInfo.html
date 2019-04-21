@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="jquery-3.3.1.min.js"></script>
     <script src="js/movieApp.js"></script>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/mTrailer.css">
+    <link rel="stylesheet" href="css/movieCheckOut.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+    <style>
+        #grad1 {
+            height: 200px;
+
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, red , yellow); /* Standard syntax (must be last) */
+        }
+    </style>
 
 </head>
-<body bgcolor="#b22222">
+<body id="grad1">
 <div class="topnav" id="myTopnav">
-    <a><h1 id="title_name" >Movie Show Time </h1></a>
+    <a><h1 id="title_name"  style="color: #4CAF50" >Movie Show Time </h1></a>
     <a  class="searchNav">
         <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">
         <i class="sb fa-search"></i>
@@ -27,25 +34,24 @@
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
-    <div class="login-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Username" name="username">
-            <input type="text" placeholder="Password" name="psw">
-            <button type="submit">Login</button>
-        </form>
-    </div>
 </div>
+
 <div class="movieTrailerpage">
     <div class="movieimage">
-        <h1 >Needs a movie image</h1>
+        <h1 class="image">Needs a movie image</h1>
     </div>
     <div class="movieName">
         <h1 class="title">scrooge</h1>
-        <h1 id="year">year</h1>
+        <h1 class="year">year</h1>
+        <h1 class="rating">year</h1>
+
     </div>
     <div class="movieTrail">
         <iframe width="640" height="315" id="trailerIframe"></iframe>
     </div>
+    <div class="MovieTicket">
+    </div>
+
 </div>
 <script src="js/searchApp.js"></script>
 <script>
@@ -61,12 +67,6 @@
 <section id="footerCSS">
 <footer class="footerpage">
     <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-        <ul class="list-unstyled list-inline social text-center">
-            <li class="fa fa-facebook"> </li>
-            <li class="fa fa-twitter"> </li>
-            <li class="fa fa-instagram"> </li>
-            <li class="fa fa-google-plus"> </li>
-        </ul>
         <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
     </div>
 
