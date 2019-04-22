@@ -71,10 +71,9 @@ body h1{
 .movieTrailerpage {
     position: relative;
     top: 10px;
-    width: 1420px;
-    height: 500px;
-    border: 3px solid;
-    /*background-color:(to right ,orange,red ,black);*/
+    height: 465px;
+    border: 3px inherit solid;
+
 }
 .movieimage {
     position: absolute;
@@ -100,15 +99,16 @@ body h1{
     top: 0px;
     right: 0;
     width: 640px;
-    height: 320px;
-    border: 3px solid black;
+    height: 455px;
+    /*border: 3px solid black;*/
 }
 
 .MovieTicket{
     position:relative;
     transition: .5s ease;
-    top: 191px;
-    left: 420px;
+    top: 390px;
+    left: 530px;
+
     right: -420px;
     bottom: -191px;
     

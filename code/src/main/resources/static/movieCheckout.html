@@ -35,12 +35,13 @@
         }
         .checkOutSubmit{
             position: center;
-            left: 50px;
+            margin-left: 170px;
         }
         .checkoutresult{
             position: absolute;
             top: 100px;
         }
+
 
     </style>
 </head>
@@ -63,20 +64,23 @@
 <div class="checkoutresult">
     <div class="movieCk" >
         <div class="movieimage" style="width: 350px;height: 465px">
-            <p id="image" ></p>
+            <h1 id="image" ></h1>
         </div>
     </div>
 
     <div class="resultcheckCss" id="resultCheckout">
         <form action="purchase">
-            <h1>Movie Name: <p id="movietitle"></p></h1>
+            <h1> Movie Name: <p id="movietitle"></p></h1>
             <h1> Theater Name: <p id="theater"></p> </h1>
             <h1> Select Time: <select id="movieTime"></select></h1>
             <h1> Payment: <p id="movieprice"></p></h1>
-            <input class="checkOutSubmit" type="submit" />
+            <input class="checkOutSubmit" type="submit" onclick="html().load(href='index.html')"/>
         </form>
     </div>
 </div>
+
+
+
 
 <script>
 
