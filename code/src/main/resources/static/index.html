@@ -13,24 +13,24 @@
     <script src="js/searchApp.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style>
-        body {
-            height: 200px;
+        .graid {
+            height: 730%;
             background-color: red; /* For browsers that do not support gradients */
             background-image: linear-gradient(to right, black, deeppink); /* Standard syntax (must be last) */
         }
     </style>
 
 </head>
-<body>
+<body class="graid">
 <div class="topnav" id="myTopnav">
     <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
-    <div class="searchNav">
+    <a class="searchNav">
         <form id="searchboxform" action="/movie">
             <input id="searchMovie" type="text" placeholder="Search by Movie..." name="id" list="searchresults">
             <datalist id="searchresults"></datalist>
-            <input type="submit" id="searchBM"><i class="fa  fa-search"></i></input>
+            <input type="submit" id="searchBM"/>
         </form>
-    </div>
+    </a>
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -43,16 +43,16 @@
 </div>
 
 
-<!--    <script>-->
-<!--        $(function(){-->
-<!--            $("#carouselDisplay").load("carousel.html");-->
-<!--        });-->
-<!--    </script>-->
+    <script>
+        $(function(){
+            $("#MovieCardDisplay").load("movieCard.html");
+        });
+    </script>
 
 
-<!--    <body>-->
-<!--    <div id="carouselDisplay"></div>-->
-<!--    </body>-->
+    <body>
+    <div id="MovieCardDisplay"></div>
+    </body>
 
 
 <script>
@@ -65,70 +65,14 @@
         }
     }
 </script>
-<!--//////////////////////////////////////////slider movie image////////////////////////////////////////-->
+<!--<section id="footerCSS">-->
+<!--    <footer class="footerpage">-->
+<!--        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">-->
+<!--            <p class="h6">&copy 2019 All GSU Movie Show Time.</p>-->
+<!--        </div>-->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/movieListDisplay.css">
-
-
-    <script>
-        var cardw = 245;	//page card's width .
-        var cardh = 418;
-        var cardn = 4;	//the number of visible page card .
-        var margin = 9;	//margin between cards .
-        var slidewraph = cardh + 85;
-        var covered = cardw - 33;	//coverd part of card (at both tails of box).
-        var boxw = cardw * cardn + margin * (cardn - 1) - covered * 2; //box width 845
-        var singlemove = (cardw + margin) * (cardn - 2);	//transform distance .
-        var listn = 0;
-        var boundary = 4;
-        $(document).ready(function () {	//be triggered when all elements are ready .
-
-            $('.box').width(boxw);
-            $('.slide-wrap').height(slidewraph);
-            $('ul').css({left: -covered});
-
-            $.ajax({
-                url: 'http://localhost:8080/api/movies',
-                method: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    listn = data.length;
-                    boundary = (cardw + margin) * (listn) - singlemove;
-                    $.each(data, function (i, val) {
-                        $('ul>li:first').after('<li><img src=/img/movies/' + val.imageUrl + '.jpg><div class=\'title\'>' + val.title + '<br><span>' + val.year + '</span></div></li>');
-                    });
-                    $('li').css("margin-right", margin);
-                    $('li').width(cardw);
-                    $('li').height(cardh);
-                    $('img').width(cardw);
-                    $('img').height(cardh);
-                    $('.title').width(cardw);
-                }
-            });
-        });
-    </script>
-    <title>jquery_carousel_slider</title>
-</head>
-
-<body>
-        <div class='tri'>
-            <ul>
-                <li> </li>
-                <li> </li>
-            </ul>
-        </div>
-
-
-<section id="footerCSS">
-    <footer class="footerpage">
-        <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
-        </div>
-    </footer>
-</section>
+<!--    </footer>-->
+<!--</section>-->
 </body>
 </html>
 
