@@ -40,7 +40,7 @@ function searchMovie(){
                 $.each(data, function (index, val) {
                     if(i<10) {
                         i++;
-                        $('#searchresults').append('<option data-value="' + val.id + '"value=' + val.title + '>');
+                        $('#searchresults').append('<option data-value="' + val.id + '"value="' + val.title + '">');
                     }
                 });
             }
