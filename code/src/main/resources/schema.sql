@@ -5,8 +5,8 @@ create table movies
     id bigint not null
         constraint movies_pkey
             primary key,
-    genre varchar(255),
-    rating varchar(255),
+    genre varchar(50),
+    rating varchar(10),
     title varchar(255),
     year integer not null
 );
