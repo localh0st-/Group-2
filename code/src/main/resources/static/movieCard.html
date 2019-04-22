@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +6,31 @@
     <style>
 
 
-        ul
-        {
+        ul {
             position: relative; /*for initial postion -> left -112*/
-            white-space:nowrap;
+            white-space: nowrap;
             font-size: 0;
             transition: transform 0.5s ease-out;
         }
 
-        li
-        {
+        li {
             display: inline-block;
-            background-color:inherit;
+            background-color: inherit;
             margin-top: 10px;
             margin-left: 90px;
-            min-height:145px;
+            min-height: 145px;
             width: 145px; /*for empty li at both tails , manipulated by jquery*/
         }
-        img
-        {
-            box-shadow: 0 1px 3px rgba(0,0,0,25);
+
+        img {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 25);
             width: 145px;
-            height:145px;/* manipulated by jquery */
+            height: 145px; /* manipulated by jquery */
         }
-        .title
-        {
+
+        .title {
             padding-top: 5px;
-            font-family:'lucida grande';
+            font-family: 'lucida grande';
             position: inherit;
             font-weight: bold;
             line-height: 16px;
@@ -43,10 +40,10 @@
             overflow: hidden;
         }
 
-        span
-        {
+        span {
             color: white;
         }
+
         .grid-container {
             display: flex;
             grid-template-columns: auto auto auto auto;
@@ -89,7 +86,7 @@
                     listn = data.length;
                     boundary = (cardw + margin) * (listn) - singlemove;
                     $.each(data, function (i, val) {
-                        $('div>li:first-of-type').after('<li><img style="display: flex"  src=/img/movies/' + val.imageUrl + '.jpg><button class=\'title\' style="background-color:red;font-size: large">' + val.title + '<br></input></li>');
+                        $('div>li:first-of-type').after('<li><img style="display: flex"  src=/img/movies/' + val.imageUrl + '.jpg><button type="submit" name="id" value="' + val.id + '" class="title" style="background-color:red;font-size: large">' + val.title + '</button></li>');
                     });
                     // $('li').css("margin-right", margin);
                     $('li').width(cardw);
@@ -106,19 +103,19 @@
 
 <body>
 
-
-<div class="grid-container">
-    <div >
-        <br>
-        <li> </li>
+<form id="moviecard" action="movie">
+    <div class="grid-container">
+        <div>
+            <br>
+            <li></li>
+        </div>
     </div>
-</div>
+</form>
 
 
 <!--<div class='tri'>-->
 
 <!--</div>-->
-
 
 
 </body>

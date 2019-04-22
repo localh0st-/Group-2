@@ -26,7 +26,8 @@
     <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
     <a class="searchNav">
         <form id="searchboxform" action="/movie">
-            <input id="searchMovie" type="text" placeholder="Search by Movie..." name="id" list="searchresults">
+            <input id="searchMovie" type="text" placeholder="Search by Movie..." name="id" list="searchresults"
+                   required>
             <datalist id="searchresults"></datalist>
             <input type="submit" id="searchBM"/>
         </form>
@@ -42,17 +43,15 @@
     <div id="result"></div>
 </div>
 
+<script>
+    $(function () {
+        $("#MovieCardDisplay").load("movieCard.html");
+    });
+</script>
 
-    <script>
-        $(function(){
-            $("#MovieCardDisplay").load("movieCard.html");
-        });
-    </script>
-
-
-    <body>
-    <div id="MovieCardDisplay"></div>
-    </body>
+<body>
+<div id="MovieCardDisplay"></div>
+</body>
 
 
 <script>
