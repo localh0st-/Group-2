@@ -70,10 +70,12 @@ body h1{
 
 .movieTrailerpage {
     position: relative;
-    top: 10px;
-    height: 465px;
-    border: 3px inherit solid;
-
+    margin-top: 10px;
+    left: 0px;
+    width: 750px;
+    height: 500px;
+    /*border: 3px black solid;*/
+    /*background-color:(to right ,orange,red ,black);*/
 }
 .movieimage {
     position: absolute;
@@ -85,33 +87,32 @@ body h1{
 
 }
 .movieName {
-    position: inherit;
+    position: absolute;
     top: 0px;
-    left: 45vh;
+    left: 35vh;
     right: 0vw;
     width: 400px;
-    height: 30px;
-    font-size: 16px;
+    height: 50px;
+    font-size: 12px;
     color: black;
 }
 .movieTrail {
     position: absolute;
     top: 0px;
-    right: 0;
-    width: 640px;
-    height: 455px;
+    left: 75vh;
+    width: 740px;
+    height: 415px;
     /*border: 3px solid black;*/
 }
 
 .MovieTicket{
     position:relative;
     transition: .5s ease;
-    top: 390px;
-    left: 530px;
-
+    top:395px;
+    left: 50vh;
     right: -420px;
-    bottom: -191px;
-    
+    bottom: 11px;
+
 }
 .footerpage{
     position: absolute;

@@ -74,7 +74,7 @@
             <h1> Theater Name: <p id="theater"></p> </h1>
             <h1> Select Time: <select id="movieTime"></select></h1>
             <h1> Payment: <p id="movieprice"></p></h1>
-            <input class="checkOutSubmit" type="submit" onclick="html().load(href='index.html')"/>
+            <input class="checkOutSubmit" type="submit" onclick="myFunction()" />
         </form>
     </div>
 </div>
@@ -83,7 +83,9 @@
 
 
 <script>
-
+   function myFunction() {
+        confirm("You have purchased your ticket success");
+    };
 </script>
 
 </body>
