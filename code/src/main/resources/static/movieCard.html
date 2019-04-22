@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/movieListDisplay.css">
+    <style>
+
+
+        ul {
+            position: relative; /*for initial postion -> left -112*/
+            white-space: nowrap;
+            font-size: 0;
+            transition: transform 0.5s ease-out;
+        }
+
+        li {
+            display: inline-block;
+            background-color: inherit;
+            margin-top: 10px;
+            margin-left: 90px;
+            min-height: 145px;
+            width: 145px; /*for empty li at both tails , manipulated by jquery*/
+        }
+
+        img {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 25);
+            width: 145px;
+            height: 145px; /* manipulated by jquery */
+        }
+
+        .title {
+            padding-top: 5px;
+            font-family: 'lucida grande';
+            position: inherit;
+            font-weight: bold;
+            line-height: 16px;
+            color: white !important;
+            font-size: 10px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        span {
+            color: white;
+        }
+
+        .grid-container {
+            display: flex;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 100px;
+            background-color: inherit;
+            margin-top: 1px;
+            /*padding: 10px;*/
+
+        }
+
+        .grid-container > li {
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+
+    <script>
+        var cardw = 245;	//page card's width .
+        var cardh = 418;
+        var cardn = 6;	//the number of visible page card .
+        var margin = 1000;	//margin between cards .
+        var slidewraph = cardh + 32;
+        var covered = cardw - 330;	//coverd part of card (at both tails of box).
+        var boxw = cardw * cardn + margin * (cardn - 1) - covered * 2; //box width 845
+        var singlemove = (cardw + margin) * (cardn - 106);	//transform distance .
+        var listn = 0;
+        var boundary = 4;
+        $(document).ready(function () {	//be triggered when all elements are ready .
+
+            $('.box').width(boxw);
+            $('.slide-wrap').height(slidewraph);
+            $('ul').css({left: -covered});
+
+            $.ajax({
+                url: 'http://localhost:8080/api/movies',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    listn = data.length;
+                    boundary = (cardw + margin) * (listn) - singlemove;
+                    $.each(data, function (i, val) {
+                        $('div>li:first-of-type').after('<li><img style="display: flex"  src=/img/movies/' + val.imageUrl + '.jpg><button type="submit" name="id" value="' + val.id + '" class="title" style="background-color:red;font-size: large">' + val.title + '</button></li>');
+                    });
+                    // $('li').css("margin-right", margin);
+                    $('li').width(cardw);
+                    $('li').height(cardh);
+                    $('img').width(cardw);
+                    $('img').height(cardh);
+                    $('.title').width(cardw);
+                }
+            });
+        });
+    </script>
+    <title>jquery_carousel_slider</title>
+</head>
+
+<body>
+
+<form id="moviecard" action="movie">
+    <div class="grid-container">
+        <div>
+            <br>
+            <li></li>
+        </div>
+    </div>
+</form>
+
+
+<!--<div class='tri'>-->
+
+<!--</div>-->
+
+
+</body>
+</html>
+

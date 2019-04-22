@@ -1,8 +1,8 @@
 body h1{
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-
+    /*box-sizing: border-box;*/
+/**/
 }
 .view-container {
     margin-top: 100px;
@@ -21,53 +21,9 @@ body h1{
     color: white;
     background-color: white;
 }
-
-
-
-.searchtext{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 42.5px;
-    line-height: 30px;
-    outline: 0;
-    border: 0;
-    background-color: black;
-    font-size: 1em;
-    border-radius: 20px;
-    padding: 0 20px;
-
+.searchNav{
+  color: #333333;
 }
-/*.sb{*/
-/*     box-sizing: border-box;*/
-/*     padding: 10px;*/
-/*     width: 42.5px;*/
-/*     height: 42.5px;*/
-/*     position: absolute;*/
-/*     top: 0;*/
-/*     right: 0;*/
-/*     border-radius: 50%;*/
-/*     color: black;*/
-/*     text-align: center;*/
-/*     font-size: 1.2em;*/
-/*     transition: all 1s;*/
-/* }*/
-
-
-/*.searchNav:hover{*/
-/*    width: 200px;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.searchNav:hover .searchtext{*/
-/*    display: block;*/
-/*}*/
-
-/*.searchNav:hover ,sb{*/
-/*    background: deepskyblue;*/
-/*    color: deepskyblue;*/
-/*}*/
 .resultpage{
     margin-top: 10px;
     margin-left: 15px;
@@ -99,7 +55,7 @@ body h1{
 
 .topnav a:hover {
     background-color: pink;
-    color: white;
+    color: black;
 }
 
 .active {

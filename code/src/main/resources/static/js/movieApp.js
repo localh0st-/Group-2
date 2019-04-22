@@ -10,7 +10,7 @@ $(document).ready(function () {
             console.log('search returned', data);
             $(".title").text(data.title);
             $(".year").text(data.year);
-            $(".movieimage").append('<img src="img/movies/' + data.imageUrl + '.jpg">');
+            $(".movieimage").append('<img src="img/movies/' + data.imageUrl + '.jpg" style="height: 454px;width: 345px;position: absolute">');
             $(".rating").text(data.rating);
             $(".showtimes").text(data.showtimes);
             $("#trailerIframe").attr("src", data.trailerUrl);

@@ -10,64 +10,7 @@ body h1{
     overflow: hidden;
     background-color: #333;
 }
-.searchNav{
-    position: absolute;
-    top: 3%;
-    left: 55%;
-    transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    background: black;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid black;
-    padding: 5px;
-}
 
-.searchtext{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;;
-    height: 42.5px;
-    line-height: 30px;
-    outline: 0;
-    border: 0;
-    display: none;
-    font-size: 1em;
-    border-radius: 20px;
-    padding: 0 20px;
-}
-.sb{
-    box-sizing: border-box;
-    padding: 10px;
-    width: 42.5px;
-    height: 42.5px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 50%;
-    color: black;
-    text-align: center;
-    font-size: 1.2em;
-    transition: all 1s;
-}
-
-
-.searchNav:hover{
-    width: 200px;
-    cursor: pointer;
-}
-
-.searchNav:hover .searchtext{
-    display: block;
-}
-
-.searchNav:hover ,sb{
-    background: #07051a;
-    color: black;
-}
 .ul{
     size: 20px;
     color: black;
@@ -139,7 +82,7 @@ body h1{
     left: 10px;
     width: 350px;
     height: 490px;
-    border: 3px solid black;
+
 
 }
 .movieName {

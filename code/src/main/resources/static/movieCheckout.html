@@ -17,9 +17,30 @@
         body {
             height: 200px;
             background-color: red; /* For browsers that do not support gradients */
-            background-image: linear-gradient(to right, black, lightblue, yellow, deeppink); /* Standard syntax (must be last) */
+            background-image: linear-gradient(to right,lightblue, darkblue); /* Standard syntax (must be last) */
         }
+        p{
+            color: white;
+            font-size: 20px;
+            indent-edge-reset: none;
+            top: -200px;
+        }
+        .resultcheckCss{
+            position: fixed;
+            border: 3px solid;
+            width: 30%;
+            height: 50%;
+            left: 50%;
 
+        }
+        .checkOutSubmit{
+            position: center;
+            left: 50px;
+        }
+        .checkoutresult{
+            position: absolute;
+            top: 100px;
+        }
 
     </style>
 </head>
@@ -40,21 +61,22 @@
 
 
 <div class="checkoutresult">
-    <div id="resultCheckout">
-        <form action="purchase">
-            <p id="movietitle"></p>
-            <p id="theater"></p>
-            <select id="movieTime"></select>
-            <p id="movieprice"></p>
-            <input type="submit"/>
-
-        </form>
-
-
+    <div class="movieCk" >
+        <div class="movieimage" style="width: 350px;height: 465px">
+            <p id="image" ></p>
+        </div>
     </div>
 
+    <div class="resultcheckCss" id="resultCheckout">
+        <form action="purchase">
+            <h1>Movie Name: <p id="movietitle"></p></h1>
+            <h1> Theater Name: <p id="theater"></p> </h1>
+            <h1> Select Time: <select id="movieTime"></select></h1>
+            <h1> Payment: <p id="movieprice"></p></h1>
+            <input class="checkOutSubmit" type="submit" />
+        </form>
+    </div>
 </div>
-
 
 <script>
 
