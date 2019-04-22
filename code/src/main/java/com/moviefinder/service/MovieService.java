@@ -33,11 +33,11 @@ public class MovieService {
     }
 
     public Map<String, HashSet<Time>> findTheatersByMovieId(long id) {
-        Movie m = repository.findById(id).orElse(new Movie());
-        HashSet values;
+        Movie m = repository.findById(id).orElseThrow(() -> new RuntimeException("No movie found with id " + id));
+        HashSet<Time> values;
         Map<String, HashSet<Time>> tl = new HashMap<>();
         for (Showtime s : m.getShowtimes()) {
-            values = new HashSet();
+            values = new HashSet<>();
             if (tl.get(s.getTheater().getName()) != null) {
                 values = tl.get(s.getTheater().getName());
             }

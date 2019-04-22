@@ -13,27 +13,27 @@
     <script src="js/searchApp.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-<style>
-    body {
-        height: 200px;
-        background-color: red; /* For browsers that do not support gradients */
-        background-image: linear-gradient(to right,black, lightblue , yellow,deeppink); /* Standard syntax (must be last) */
-    }
- 
+    <style>
+        body {
+            height: 200px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, black, lightblue, yellow, deeppink); /* Standard syntax (must be last) */
+        }
 
-</style>
+
+    </style>
 </head>
-<body >
+<body>
 <div class="topnav" id="myTopnav">
     <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
-<!--    <a class="searchNav">-->
-<!--        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">-->
-<!--        <i class="sb fa-search"></i>-->
-<!--    </a>-->
-    <a href="index.html" >Home</a>
+    <!--    <a class="searchNav">-->
+    <!--        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">-->
+    <!--        <i class="sb fa-search"></i>-->
+    <!--    </a>-->
+    <a href="index.html">Home</a>
     <a href="report.html">Report</a>
     <a href="about.html">About</a>
-    <a href="movieCheckout.html" class="active" >movieCheckout</a>
+    <a href="movieCheckout.html" class="active">movieCheckout</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
     </a>
@@ -42,18 +42,19 @@
 
 <div class="checkoutresult">
     <div id="resultCheckout">
-        <p id="movieId"></p>
-        <select id="movieTime" ></select>
-        <p id="theater"></p>
-        <p id="moviePrice"></p>
+        <form action="purchase">
+            <p id="movietitle"></p>
+            <p id="theater"></p>
+            <select id="movieTime"></select>
+            <p id="movieprice"></p>
+            <input type="submit"/>
+
+        </form>
+
 
     </div>
 
 </div>
-
-
-
-
 
 
 <script>
