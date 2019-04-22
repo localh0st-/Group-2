@@ -7,7 +7,7 @@
         cardp : 221,
         cardn : 7,	// the number of visible page card .
         margin : 9	// margin between cards .
-    }
+    };
 
     var touch_event = {};
 
@@ -81,7 +81,7 @@
     function handleMove(e) {
         if (touch_event.beingTouched) {
             let deltaX = e.changedTouches[0].clientX - touch_event.touchStartX;
-            touch_event.movement = deltaX
+            touch_event.movement = deltaX;
             touch_event.prevTouchX = e.changedTouches[0].clientX;
         }
     }
@@ -107,7 +107,7 @@
         var init_setting = $.extend({}, default_setting, cus_setting || {});
 
         var slidewraph = init_setting.cardh + 85;
-        var covered=init_setting.cardw - 10	//coverd part of card (at both tails of box).
+        var covered=init_setting.cardw - 10;	//coverd part of card (at both tails of box).
         var boxw = init_setting.cardw * init_setting.cardn + init_setting.margin * (init_setting.cardn - 1) - covered * 2; //box width 845
         var singlemove = (init_setting.cardw+init_setting.margin) * (init_setting.cardn - 2);	//transform distance .
         var listn = init_setting.JSON[init_setting.subject].length;
@@ -165,4 +165,4 @@
         }
     };
 
-})(jQuery)
+})(jQuery);
