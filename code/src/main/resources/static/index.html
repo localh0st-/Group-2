@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="title">Movie Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="js/movieApp.js"></script>
+
+    <link rel="stylesheet" href="css/movieCheckOut.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/searchApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        .graid {
+            /*//height: 730%;*/
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, black, deeppink); /* Standard syntax (must be last) */
+        }
+    </style>
+
+</head>
+<body class="graid">
+<div class="topnav" id="myTopnav">
+    <a><h1 id="title_name" style="color: #4CAF50">Movie Show Time </h1></a>
+    <a class="searchNav">
+        <form id="searchboxform" action="/movie">
+            <input id="searchMovie" type="search" placeholder="Search by Movie..." name="id" list="searchresults" required>
+            <datalist id="searchresults"></datalist>
+            <input type="submit" id="searchBM" style="color: #333333"/>
+        </form>
+    </a>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="resultpage">
+    <div id="result"></div>
+</div>
+
+<script>
+    $(function () {
+        $("#MovieCardDisplay").load("movieCard.html");
+    });
+</script>
+
+<body>
+<div id="MovieCardDisplay"></div>
+</body>
+
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+<!--<section id="footerCSS">-->
+<!--    <footer class="footerpage">-->
+<!--        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">-->
+<!--            <p class="h6">&copy 2019 All GSU Movie Show Time.</p>-->
+<!--        </div>-->
+
+<!--    </footer>-->
+<!--</section>-->
+</body>
+</html>
+

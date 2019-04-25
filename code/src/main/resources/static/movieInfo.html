@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="title">Movie Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="js/movieApp.js"></script>
+    <link rel="stylesheet" href="css/movieCheckOut.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <style>
+        body{
+            border-spacing: inherit;
+        }
+        #grad1 {
+            height: 200px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, red , yellow); /* Standard syntax (must be last) */
+        }
+    </style>
+</head>
+<body id="grad1">
+<div class="topnav" id="myTopnav">
+    <a><h1 id="title_name"  style="color: #4CAF50" >Movie Show Time </h1></a>
+    <!--    <a  class="searchNav">-->
+    <!--        <input class="searchtext" id="searchMovie" type="search" placeholder="Search by Movie..." name="search">-->
+    <!--        <i class="sb fa-search"></i>-->
+    <!--    </a>-->
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="movieTrailerpage">
+    <div class="movieimage">
+        <h1 id="image"></h1>
+    </div>
+    <div class="movieName">
+        <h1 class="title">scrooge</h1>
+        <h1 class="year">year</h1>
+        <h1 class="rating">year</h1>
+        <h1 class="genre">genre</h1>
+    </div>
+    <div class="movieTrail">
+        <iframe width="740" height="500" id="trailerIframe"></iframe>
+    </div>
+    <div class="MovieTicket">
+    </div>
+</div>
+
+<script src="js/searchApp.js"></script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+<section id="footerCSS">
+    <footer class="footerpage">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+            <p class="h6">&copy 2019 All GSU Movie Show Time.</p>
+        </div>
+
+    </footer>
+</section>
+</body>
+</html>
